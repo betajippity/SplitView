@@ -68,7 +68,7 @@ struct DemoSplitter: SplitDivider {
                 }
             }
             .contentShape(Rectangle())
-            .onChange(of: styling.previewHide) { hide in
+            .task(id: styling.previewHide) {
                 hideButton = styling.hideSplitter
             }
         } else {
@@ -98,7 +98,7 @@ struct DemoSplitter: SplitDivider {
                 }
             }
             .contentShape(Rectangle())
-            .onChange(of: styling.previewHide) { hide in
+            .task(id: styling.previewHide) {
                 hideButton = styling.hideSplitter
             }
         }

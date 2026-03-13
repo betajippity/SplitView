@@ -99,7 +99,9 @@ public struct Split<P: View, D: SplitDivider, S: View>: View {
             }
             .clipped()  // Can cause problems in some List styles if not clipped
             .environmentObject(layout)
-            .onChange(of: fraction.value) { new in constrainedFraction = new }
+            .task(id: fraction.value) {
+                constrainedFraction = fraction.value
+            }
         }
     }
 
